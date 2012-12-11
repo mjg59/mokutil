@@ -485,8 +485,7 @@ import_moks (char **files, uint32_t total)
 		CertList->SignatureListSize = sizes[i] +
 		   sizeof(EFI_SIGNATURE_LIST) + sizeof(EFI_SIGNATURE_DATA) - 1;
 		CertList->SignatureHeaderSize = 0;
-		CertList->SignatureSize = sizes[i] +
-			sizeof(EFI_SIGNATURE_DATA) + 16;
+		CertList->SignatureSize = sizes[i] + 16;
 		CertData->SignatureOwner = SHIM_LOCK_GUID;
 
 		fd = open (files[i], O_RDONLY);
